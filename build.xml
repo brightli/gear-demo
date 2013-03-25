@@ -1,0 +1,35 @@
+<project name="GearDEMO发布工具" basedir=".">
+	<property file="${basedir}/build.properties" />
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+	<target name="1.编译">
+		<echo message="开始编译" />
+		<mxmlc file="${basedir}/src/gear/gui/TestGButton.as" output="${basedir}/bin/TestGButton.swf" failOnError="true">
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml" />
+			<!--<load-config filename="${basedir}/debug-config.xml" /> -->
+			<source-path path-element="${basedir}/src" />
+			<compiler.library-path dir="${basedir}" append="true">
+				<include name="lib/*" />
+			</compiler.library-path>
+		</mxmlc>
+		<antcall target="运行模板">
+			<param name="file" value="${basedir}/bin/TestGButton.swf" />
+		</antcall>
+	</target>
+	<target name="运行模板">
+		<exec executable="open" os="Mac OS X">
+			<arg line='-a "flash player debugger" ${file}' />
+		</exec>
+		<exec executable="cmd.exe" spawn="true" osfamily="windows">
+			<arg line='/C start ${file}' />
+		</exec>
+		<exec executable="flashplayer" os="Linux">
+			<arg line="${file}" />
+		</exec>
+	</target>
+	<target name="加入遥测">
+		<exec executable="cmd.exe" osfamily="windows">
+			<arg line='/C start python e:\work\tools\add-opt-in.py ${basedir}/bin/TestGButton.swf' />
+		</exec>
+	</target>
+</project>
+

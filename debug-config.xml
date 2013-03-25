@@ -1,0 +1,11 @@
+<flex-config>
+	<!-- 发布版本 -->
+	<target-player>11.4</target-player>
+	<compiler>
+		<!-- <define> <name>CONFIG::debugging</name> <value>true</value> </define> -->
+	</compiler>
+	<!-- 开启遥测 -->
+	<advanced-telemetry>true</advanced-telemetry>
+	<!-- 设置遥测密码 -->
+	<advanced-telemetry-password>010421</advanced-telemetry-password>
+</flex-config>

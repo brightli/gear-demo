@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+    <versions>
+        <swc version="1.2"/>
+        <compiler name="ActionScript Compiler" version="2.0.0" build="350388"/>
+    </versions>
+    <features>
+        <feature-script-deps/>
+        <feature-files/>
+    </features>
+    <libraries>
+        <library path="library.swf">
+            <digests>
+                <digest type="SHA-256" signed="false" value="e422878ecdbcbb94a9b3bcc1efee33173f2b19bbc281b7576afa3bb83dd9c0fa"/>
+            </digests>
+        </library>
+    </libraries>
+    <files>
+        <file path="test" mod="1363779824556"/>
+    </files>
+</swc>
