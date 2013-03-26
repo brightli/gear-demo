@@ -18,7 +18,7 @@ package robotlegs.login.view {
 		protected var _reg_btn : GButton;
 		
 		protected function initView():void{
-			setSize(320,240);
+			setSize(320,80);
 			align=GAlign.CENTER;
 			_login_btn= new GButton();
 			_login_btn.text = "登录";
